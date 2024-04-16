@@ -7,7 +7,12 @@
 </head>
 <body>
     <h1>Income Profile</h1>
-    <p><strong>Amount</strong>{{ income.amount }}</p>
+    <p><strong>Amount</strong>{{ incomes }}</p>
+    {% for item in incomes %}
+    <p>{{item.amount}}</p>
+    <p>{{item.date}}</p>
+    <p>{{item.cat.name}}</p>
+    {% endfor %}
     <!-- Add more fields as needed -->
 </body>
 </html>
