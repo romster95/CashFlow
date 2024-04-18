@@ -3,16 +3,30 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    name = models.CharField(max_length=30)
-    email = models.EmailField()
+    name = models.CharField(max_length=30, verbose_name="Ім'я")
+    email = models.EmailField(verbose_name="Почта")
     password = models.CharField(max_length=128)
-    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name="Баланс")
 
     def __str__(self):
-        return self.email
+        return self.name
+
+    class Meta:
+        verbose_name="Користувач"
+        verbose_name_plural="Користувачі"
+        ordering=['name']
+
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, db_index=True)
+    name = models.CharField(max_length=100, db_index=True, verbose_name="Назва")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name="Категорія"
+        verbose_name_plural="Категорії"
+        ordering = ['id']
 
 
 class Expense(models.Model):
