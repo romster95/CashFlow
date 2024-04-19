@@ -5,5 +5,19 @@
 {% endblock %}
 
 {% block content %}
+    <section class="intro">
+        <div class="container">
+            <div class="intro-text">
+                <h2 class="greeting">Вітаємо, {{ user.name }}!</h2>
+                <h1 class="balance-text balance">Баланс гаманця:</h1>
+                <h1 class="balance">₴{{ user.balance }}</h1>
+            </div>
+            <div class="buttons">
+                <button class="btn">+ Прибуток</button>
+                <button class="btn">- Витрати</button>
+            </div>
+        </div>
+    </section>
+
 
 {% endblock %}

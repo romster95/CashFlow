@@ -11,6 +11,16 @@
     {% endblock %}
 </head>
 <body>
+    <div class="body-wrapper">
+        <header class="header">
+            <div class="container">
+                <nav class="navigation">
+                    <a href="#" class="logo"><img class="logo" src="{% static 'img/logo.png' %}" alt="logo"></a>
+                    <a href="#" class="logout"><img class="logout" src="{% static 'img/logoutIcon.png' %}" alt="logout"></a>
+                </nav>
+            </div>
+        </header>
+    </div>
 {% block content %}
 {% endblock %}
 </body>
