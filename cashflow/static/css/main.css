@@ -170,12 +170,9 @@ html, body {
     justify-content: space-between;
 }
 
-.circle {
+.caticon {
     height: 47px;
     width: 47px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 .income {

@@ -19,6 +19,7 @@ class User(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="Назва")
+    picture = models.ImageField(upload_to='catIcons')
 
     def __str__(self):
         return self.name

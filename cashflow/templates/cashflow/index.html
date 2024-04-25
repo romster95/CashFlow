@@ -38,7 +38,7 @@
                         {% for item in incomes %}
                             <p class="date">{{item.date}}</p>
                             <div class="test">
-                                <span class="circle"></span>
+                                <img class="caticon" src="{{item.cat.picture.url}}" alt="Category icon">
                                 <p class="income category">{{item.cat.name}}</p>
                                 <p class="income amount">+ {{item.amount}}</p>
                             </div>

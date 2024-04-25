@@ -16,4 +16,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Income)
+admin.site.register(Expense)
 
