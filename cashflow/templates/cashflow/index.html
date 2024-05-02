@@ -9,14 +9,63 @@
         <div class="container">
             <div class="intro-content">
                 <div class="intro-text">
-                <h2 class="greeting">Вітаємо, {{ user.name }}!</h2>
-                <h1 class="balance-text balance">Баланс гаманця:</h1>
-                <h1 class="balance">₴{{ user.balance }}</h1>
-            </div>
-            <div class="buttons">
-                <button class="btn">+ Прибуток</button>
-                <button class="btn">- Витрати</button>
-            </div>
+                    <h2 class="greeting">Вітаємо, {{ user.name }}!</h2>
+                    <h1 class="balance-text balance">Баланс гаманця:</h1>
+                    <h1 class="balance">₴{{ user.balance }}</h1>
+                </div>
+                <div class="buttons">
+                    <button class="btn" id="open-income-modal">+ Прибуток</button>
+                    <button class="btn" id="exp-btn">- Витрати</button>
+                </div>
+
+                <div id="income-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-income-modal">&times;</span>
+                        <h2 class="form-title">Введіть суму надходження</h2>
+                        <form class="form-wrap">
+                            <div class="form-group">
+                                <label class="input-label" for="income-amount">Сума:</label>
+                                <input class="inc-exp-amount" type="number" id="income-amount" name="income-amount" min="0" step="0.01" placeholder="Введіть суму" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="input-label" for="income-category">Категорія:</label>
+                                <select class="inc-exp-category" id="income-category" name="income-category" required>
+                                    <option value="">Оберіть категорію</option>
+                                    <option value="salary">Зарплата</option>
+                                    <option value="bonus">Бонус</option>
+                                    <option value="investment">Інвестиції</option>
+                                    <option value="other">Інше</option>
+                                </select>
+                            </div>
+                            <button class="form-btn" type="submit">Підтвердити</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="expense-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-expense-modal">&times;</span>
+                        <h2 class="form-title">Введіть суму витрат</h2>
+                        <form class="form-wrap">
+                            <div class="form-group">
+                                <label class="input-label" for="expense-amount">Сума:</label>
+                                <input class="inc-exp-amount" type="number" id="expense-amount" name="expense-amount" min="0" step="0.01" placeholder="Введіть суму" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="input-label" for="expense-category">Категорія:</label>
+                                <select class="inc-exp-category" id="expense-category" name="expense-category" required>
+                                    <option value="">Оберіть категорію</option>
+                                    <option value="food">Їжа</option>
+                                    <option value="transport">Транспорт</option>
+                                    <option value="bills">Рахунки</option>
+                                    <option value="entertainment">Розваги</option>
+                                    <option value="other">Інше</option>
+                                </select>
+                            </div>
+                            <button class="form-btn" type="submit">Підтвердити</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="tickers">
                 {% for content in tickers %}
